@@ -1,12 +1,19 @@
-package com.nirmal.stock.user;
+package com.nirmal.stock.student;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.time.LocalDate;
+import java.time.Period;
 
 @Data
 @Entity
@@ -26,5 +33,10 @@ public class Student {
   private String name;
   private String email;
   private LocalDate dob;
+  public Integer getAge() {
+    return Period.between(this.dob, LocalDate.now()).getYears();
+  }
+
+  @Transient
   private Integer age;
 }

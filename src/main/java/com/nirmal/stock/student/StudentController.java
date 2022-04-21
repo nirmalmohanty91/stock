@@ -1,4 +1,4 @@
-package com.nirmal.stock.user;
+package com.nirmal.stock.student;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
